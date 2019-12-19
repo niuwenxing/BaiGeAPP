@@ -1,7 +1,6 @@
 package com.baigez.baige.common;
 
 import android.annotation.SuppressLint;
-import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import me.jessyan.autosize.AutoSizeCompat;
 
 public abstract class BaigeActivity <V extends IBaseView,P extends BasePresenter<V>> extends BaseActivity<V,P> {
 
@@ -77,13 +75,13 @@ public abstract class BaigeActivity <V extends IBaseView,P extends BasePresenter
         }
     }
 
-    @Override
+   /* @Override
     public Resources getResources() {
         //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat
         AutoSizeCompat.autoConvertDensityOfGlobal(super.getResources());//如果没有自定义需求用这个方法
         AutoSizeCompat.autoConvertDensity(super.getResources(), 667, false);//如果有自定义需求就用这个方法
         return super.getResources();
-    }
+    }*/
 
     @Override
     protected void createPresenter() {
