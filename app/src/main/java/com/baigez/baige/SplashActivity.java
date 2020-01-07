@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.baigez.baige.common.BaigeActivity;
+import com.baigez.baige.home.homepage.MainActivity;
 import com.baigez.rootlibrary.activity.permission.RequestPermissionListener;
 
 public class SplashActivity extends BaigeActivity {

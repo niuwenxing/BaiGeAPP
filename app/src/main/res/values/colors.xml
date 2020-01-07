@@ -4,5 +4,15 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="color040E22">#040E22</color>
-    <color name="color000117">#000117</color>
+    <color name="colorF2F2F3">#F2F2F3</color>
+    <color name="colorFFF">#FFFFFF</color>
+    <color name="color000">#000000</color>
+    <color name="color8E2">#51B8E2</color>
+    <color name="color3B3E44">#3B3E44</color>
+    <color name="color4287FC">#55C6CC</color>
+    <color name="color3f8">#ff3e83f8</color>
+    <color name="color859">#ff575859</color>
+    <color name="color999999">#999999</color>
+    <color name="color94959A">#94959A</color>
+    <color name="color127AF9">#127AF9</color>
 </resources>

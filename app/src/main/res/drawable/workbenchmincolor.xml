@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#55C6CC" />
+            <corners android:radius="6dp" />
+            <item name="android:shadowColor" tools:ignore="MissingPrefix">#00000000</item>
+            <item name="android:shadowDx" tools:ignore="MissingPrefix">20</item>
+            <item name="android:shadowDy" tools:ignore="MissingPrefix">10</item>
+</shape>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.baigez.baige">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -24,7 +26,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".home.LoginpageActivity"></activity>
+        <activity android:name=".home.homepage.activity.PatientActivity"></activity>
+        <activity android:name=".home.account.SetNewsPasswordActivity" />
+        <activity android:name=".home.account.VerificationCodeActivity" />
+        <activity android:name=".home.account.ForgetPasActivity" />
+        <activity
+            android:name=".home.account.LoginpageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">
@@ -35,15 +50,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".home.homepage.MainActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-        <meta-data
-            android:name="design_width_in_dp"
-            android:value="360" />
-        <meta-data
-            android:name="design_height_in_dp"
-            android:value="640" />
     </application>
 
 </manifest>

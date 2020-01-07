@@ -3,5 +3,11 @@
 
     <string name="common_exit_warn">再次点击退出</string>
     <string name="common_token_invalidate">登录超时，请重新登录</string>
+    <string name="signin">登录</string>
+    <string name="forgetpassword">忘记密码</string>
+    <string name="yanzhengma">验证码已发送至 +86 %1$s</string>
+    <string name="witimeStr"> %1$s 重新获取验证码</string>
+    <string name="ok">确定</string>
+    <string name="changePad">修改密码</string>
 
 </resources>

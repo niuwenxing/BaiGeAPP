@@ -4,61 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.LoginpageActivity">
+    tools:context=".home.account.LoginpageActivity">
+    <include layout="@layout/layout_common_throw" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/dp_114"
-        android:layout_height="@dimen/dp_99"
-        android:layout_marginTop="@dimen/dp_68"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="68dp"
+        android:background="@mipmap/denglu"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[15]" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_36"
-        android:layout_marginTop="@dimen/dp_36"
-        android:layout_marginEnd="@dimen/dp_36"
+        android:layout_marginLeft="157dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginRight="157dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <View
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_0_1"
-            android:layout_marginTop="14dp"
-            android:background="@color/color000117"
+            android:layout_height="1px"
+            android:background="@color/colorF2F2F3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-        <TextView
-            android:padding="@dimen/dp_5"
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color040E22"
-            android:textSize="@dimen/sp_20"
-            android:text="+86" />
-
         <EditText
             android:id="@+id/editText"
-            android:layout_width="0dp"
+            style="@style/editTextStyle"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@null"
-            android:hint="请输入手机号"
-            android:textSize="@dimen/sp_20"
-            android:layout_marginLeft="@dimen/dp_10"
-            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            android:digits="0123456789"
+            android:hint="请输入登录账号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:text="17600187603"
+            android:phoneNumber="true"
+            android:textSize="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="@+id/textView2" />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorF2F2F3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_Passwordstr" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/color040E22"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_Passwordstr"
+            style="@style/editTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:textSize="24dp"
+            android:text="123456"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintEnd_toStartOf="@+id/img_passWordBtn"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <ImageView
+            android:id="@+id/img_passWordBtn"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:src="@drawable/green_password_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/et_Passwordstr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_Passwordstr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/bt_login_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btn_login_selector"
+        android:text="@string/signin"
+        android:textColor="@color/colorFFF"
+        android:padding="16dp"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/tv_ForgetPas_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="14dp"
+        android:textSize="24dp"
+        android:paddingBottom="5dp"
+        android:text="@string/forgetpassword"
+        app:layout_constraintEnd_toEndOf="@+id/bt_login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/bt_login_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.account.VerificationCodeActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_common_throw" />
+
+    <ImageView
+        android:id="@+id/iv_ForgetClose_btn"
+        android:layout_width="21dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:src="@mipmap/chahao"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Helpbtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_Helpbtn" />
+
+    <TextView
+        android:id="@+id/tv_Helpbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="帮助"
+        android:padding="5dp"
+        android:textColor="#9B9FA7FF"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:text="输入验证码"
+        android:textColor="@color/color000"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_Helpbtn"
+        app:layout_constraintStart_toEndOf="@+id/iv_ForgetClose_btn"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ForgetClose_btn" />
+
+    <TextView
+        android:id="@+id/tv_showphoneStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/yanzhengma"
+        android:textColor="@color/color000"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <com.baigez.baige.customveiw.PhoneCode
+        android:layout_width="0dp"
+        android:id="@+id/pc_phoneCode_str"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/tv_showphoneStr"
+        app:layout_constraintTop_toBottomOf="@+id/tv_showphoneStr"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_weitTimeStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/witimeStr"
+        android:textColor="@color/color000"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/pc_phoneCode_str"
+        app:layout_constraintTop_toBottomOf="@+id/pc_phoneCode_str" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

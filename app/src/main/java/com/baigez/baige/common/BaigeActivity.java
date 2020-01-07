@@ -3,10 +3,14 @@ package com.baigez.baige.common;
 import android.annotation.SuppressLint;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -18,6 +22,10 @@ import com.baigez.baige.common.widget.DefaultPresenterImpl;
 import com.baigez.rootlibrary.activity.mvp.activity.BaseActivity;
 import com.baigez.rootlibrary.activity.mvp.presenter.BasePresenter;
 import com.baigez.rootlibrary.activity.mvp.view.IBaseView;
+import com.baigez.rootlibrary.activity.swipeback.SwipeBackLayout;
+import com.baigez.rootlibrary.activity.swipeback.Utils;
+import com.baigez.rootlibrary.activity.swipeback.app.SwipeBackActivityBase;
+import com.baigez.rootlibrary.activity.swipeback.app.SwipeBackActivityHelper;
 import com.baigez.rootlibrary.activity.utils.StringUtil;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -26,7 +34,8 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaigeActivity <V extends IBaseView,P extends BasePresenter<V>> extends BaseActivity<V,P> {
+public abstract class  BaigeActivity <V extends IBaseView,P extends BasePresenter<V>> extends BaseActivity<V,P> implements SwipeBackActivityBase {
+
 
     private ConnectivityManager cm;
     /**
@@ -42,16 +51,61 @@ public abstract class BaigeActivity <V extends IBaseView,P extends BasePresenter
      * 是否在前台显示
      */
     private boolean isFront = false;
+    /**
+     * Activity滑动控制
+     */
+    private SwipeBackActivityHelper mHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bind = ButterKnife.bind(this);
-        EventBusUtil.register(this);
+
+        mHelper = new SwipeBackActivityHelper(this);
+        mHelper.onActivityCreate();
+
         checkNetWork();
+
 
     }
 
+
+    //在onCreate方法彻底执行完毕的回调
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mHelper.onPostCreate();
+        if (isHome) {
+            setSwipeBackEnable(false);
+        }
+    }
+
+    @Override
+    public View findViewById(int id) {
+        View v = super.findViewById(id);
+        if (v == null && mHelper != null)
+            return mHelper.findViewById(id);
+        return v;
+    }
+
+    //获取向后滑动布局
+    @Override
+    public SwipeBackLayout getSwipeBackLayout() {
+        return mHelper.getSwipeBackLayout();
+    }
+
+    //设置向后滑动
+    @Override
+    public void setSwipeBackEnable(boolean enable) {
+            getSwipeBackLayout().setEnableGesture(enable);
+    }
+
+    //滑动完成
+    @Override
+    public void scrollToFinishActivity() {
+        Utils.convertActivityToTranslucent(this);
+        getSwipeBackLayout().scrollToFinishActivity();
+    }
 
     @SuppressLint("MissingPermission")
     public void checkNetWork() {
@@ -151,5 +205,6 @@ public abstract class BaigeActivity <V extends IBaseView,P extends BasePresenter
         super.onPause();
         isFront = false;
     }
+
 
 }
