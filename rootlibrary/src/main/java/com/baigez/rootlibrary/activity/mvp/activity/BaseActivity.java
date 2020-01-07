@@ -7,7 +7,7 @@ import android.provider.Settings;
 
 import androidx.annotation.Nullable;
 
-import com.baigez.rootlibrary.activity.RootActivity;
+import com.baigez.rootlibrary.activity.activity.RootActivity;
 import com.baigez.rootlibrary.activity.mvp.presenter.BasePresenter;
 import com.baigez.rootlibrary.activity.mvp.view.IBaseView;
 

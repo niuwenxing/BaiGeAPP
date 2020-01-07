@@ -29,6 +29,7 @@ import com.baigez.rootlibrary.R;
 import com.baigez.rootlibrary.activity.config.AppConfig;
 import com.baigez.rootlibrary.activity.mvp.view.IBaseView;
 import com.baigez.rootlibrary.activity.permission.RequestPermissionListener;
+import com.baigez.rootlibrary.activity.screen.ScreenUtils;
 import com.baigez.rootlibrary.activity.utils.CToast;
 import com.baigez.rootlibrary.activity.utils.StringUtil;
 import com.baigez.rootlibrary.activity.widget.ThrowLayout;
@@ -88,6 +89,8 @@ public abstract class RootActivity extends AppCompatActivity implements IBaseVie
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //屏幕适配
+        setActivityScreen();
         // 放大当前上下文
         activity = this;
         // 反射组件
@@ -102,6 +105,18 @@ public abstract class RootActivity extends AppCompatActivity implements IBaseVie
         // 初始化异常布局
         initThrowView();
 
+    }
+    private void setActivityScreen(){//360
+        try {
+            //适配
+            if (ScreenUtils.isPortrait()) {
+                ScreenUtils.adaptScreen4VerticalSlide(this,768);
+            } else {
+                ScreenUtils.adaptScreen4HorizontalSlide(this, 1024);
+            }
+        }catch (Exception e){
+
+        }
     }
 
 

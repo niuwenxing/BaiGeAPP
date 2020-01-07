@@ -1,7 +1,7 @@
 package com.baigez.rootlibrary.activity.utils.Contacts;
 
 
-import com.github.promeg.pinyinhelper.Pinyin;
+//import com.github.promeg.pinyinhelper.Pinyin;
 
 import java.util.regex.Pattern;
 
@@ -17,7 +17,7 @@ public class PinyinUtil {
      */
     public static String getPingYin(String inputString) {
         if (inputString == null) return "";
-        return Pinyin.toPinyin(inputString, "").toLowerCase();
+        return "";
     }
 
     /**

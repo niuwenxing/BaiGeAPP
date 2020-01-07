@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="SwipeBackLayoutStyle" format="reference"/>
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="all" value="3" />
+        </attr>
+        <attr name="shadow_left" format="reference"/>
+        <attr name="shadow_right" format="reference"/>
+        <attr name="shadow_bottom" format="reference"/>
+    </declare-styleable>
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+
+    <declare-styleable name="CommonItem">
+        <attr name="img_src" format="reference" />
+        <attr name="img_vis" format="integer"></attr>
+        <attr name="title_text" format="string" />
+        <attr name="dividerVis" format="integer" />
+        <attr name="title_vis" format="integer"></attr>
+        <attr name="hint_text" format="string" />
+        <attr name="hint_vis" format="integer" />
+        <attr name="right_img" format="reference" />
+        <attr name="right_text" format="string" />
+        <attr name="right_switch_vis" format="integer" />
+        <attr name="right_text_vis" format="integer" />
+        <attr name="right_img_vis" format="integer" />
+        <attr name="right_txt_line" format="integer" />
+        <attr name="title_size" format="integer" />
+        <attr name="hint_size" format="integer" />
+        <attr name="right_size" format="integer" />
+        <attr name="title_color" format="color" />
+        <attr name="hint_color" format="color" />
+        <attr name="right_color" format="color" />
+    </declare-styleable>
+
+</resources>
